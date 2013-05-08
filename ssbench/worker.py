@@ -251,7 +251,7 @@ class Worker:
                 parts.append(self._token_key(value))
             else:
                 parts.append(value)
-        return '\x01'.join(parts)
+        return '\x01'.join(map(str,parts))
 
     def ignoring_http_responses(self, statuses, fn, call_info, **extra_keys):
         if 401 not in statuses:
